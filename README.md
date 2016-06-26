@@ -1,2 +1,2 @@
 # InterviewBit
-This repository will contain my solutions to the problems of InterviewBit.
+This repository contains my solutions to the problems of the interview preparation site, InterviewBit.
