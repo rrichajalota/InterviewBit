@@ -14,9 +14,9 @@
     ]
 */
 
-vector<vector<int>> pattern(A);
+vector<vector<int> > Solution::generate(int A) {
+    vector<vector<int>> pattern;
     vector<int> row;
-    
     if(A==0)
         return pattern;
     
@@ -42,3 +42,4 @@ vector<vector<int>> pattern(A);
         pattern.push_back(col);
     }
     return pattern;
+}
