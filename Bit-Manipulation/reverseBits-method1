@@ -17,7 +17,7 @@
     =>        11000000000000000000000000000000
     return 3221225472
 */
-//O(n) solution. swaps whenever the bits are different 
+//O(k) solution where k is the number of bits, swaps whenever the bits are different 
 
 unsigned int Solution::reverse(unsigned int A) {
     int n= sizeof(A)* 8; //bits
