@@ -39,7 +39,7 @@ int Solution::atoi(const string &A) {
                 if(num <= INT_MAX/10 && (num*10 + digit <= INT_MAX)) // check for overflow
                     num= num*10 + digit;
                     
-                else if(num > INT_MAX/10){  // 
+                else if(num > INT_MAX/10){  // if num > INT_MAX/10, overflow is bound to happen 
                     if(is_neg)
                         return INT_MIN;
                         
