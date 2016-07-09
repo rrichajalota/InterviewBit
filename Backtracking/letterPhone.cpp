@@ -11,7 +11,12 @@
 */
 
 /*  SOLUTION APPROACH
-    We start from the first digit in the string. If input is "23", then all possible mnemonics for it will either start from a, b or c. We fix the first letter of the letter string (in this case, a) for the first digit(2). now our current string looks like "a". then move to the next digit. We then place the first letter of the letter string (in this case, d) for the second digit(3). the current string now becomes "ad". we store it in the result. then pop 'd' from the back. current-> "a". place the second letter of the string in current. current->"ae". store it and repeat the same process again till all combinations have been tried for both the digits.
+    We start from the first digit in the string. If input is "23", then all possible mnemonics for it will either start 
+    from a, b or c. We fix the first letter of the letter string (in this case, a) for the first digit(2). now our current 
+    string looks like "a". then move to the next digit. We then place the first letter of the letter string (in this case, d) 
+    for the second digit(3). the current string now becomes "ad". we store it in the result. then pop 'd' from the back. 
+    current-> "a". place the second letter of the string in current. current->"ae". store it and repeat the same process again 
+    till all combinations have been tried for both the digits.
 */
 
 void combinations(string A, int start, string &current, vector<string> &result);
