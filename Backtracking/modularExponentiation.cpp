@@ -8,6 +8,10 @@
     Return : 2 
     2^3 % 3 = 8 % 3 = 2
 */
+/*  SOLUTION APPROACH
+    35 % 3 = 2. 
+    Also, (7 % 3 * 5 % 3) % 3 = 2.
+*/
 
 int Solution::Mod(int A, int B, int C) {
     
