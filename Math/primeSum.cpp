@@ -10,6 +10,10 @@
     [a, b] < [c, d] 
     If a < c OR a==c AND b < d. 
 */
+/*  Solution Approach
+    First, find the prime numbers till number A and store them in a hash table. Now, loop through the table to find the two
+    numbers.
+*/
 
 int min(int a, int b){
     return a < b ? a : b;
