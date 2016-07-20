@@ -27,33 +27,32 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
-bool compare(TreeNode* root1, TreeNode* root2);
+bool issym(TreeNode* left, TreeNode* right);
 
-int Solution::isSymmetric(TreeNode* root) {
-    if (root==NULL)
-          return true;
-    if(root && !root->left && !root->right)
-         return 1;
-    if(!root->right && root->left || !root->left && root->right)
-         return 0;
-    TreeNode* root1= root->left, *root2= root->right;
-         return compare(root1,root2);
-
+int Solution::isSymmetric(TreeNode* A) {
+    if(!A || !A->left && !A->right)
+        return 1;
+    if(!A->left || !A->right)
+        return 0;
+    
+    TreeNode* left= A->left;
+    TreeNode* right= A->right;
+    
+    return issym(left, right);
 }
 
-bool compare(TreeNode* root1, TreeNode* root2){
-    bool cmp;
-        if(!root1 && !root2)
-          return true;
-        if(!root1 && root2 || root1 && !root2)
-          return false;
-        else{
-            if(root1->val==root2->val){
-                cmp=compare(root1->left,root2->right);
-                if(cmp==true)
-                 compare(root1->right,root2->left);
-                else return false;
-            }
-           else return false; 
-        }
+bool issym(TreeNode* left, TreeNode* right){
+    if(!left && !right)
+        return 1;
+        
+    if(!left && right || !right && left)
+        return 0;
+        
+    if(left->val == right->val){
+        
+        if(issym(left->left, right->right))
+            return issym(left->right, right->left);
+    }
+    
+    return 0;
 }
