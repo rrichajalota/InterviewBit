@@ -27,7 +27,7 @@ vector<vector<int> > Solution::diagonal(vector<vector<int> > &A) {
     
         while(sum == i+j && i < A.size() && j >=0 ){
             row.push_back(A[i][j]);
-            i= i+1, j= j-1;
+            ++i, --j;
         }
         
         ++sum;
