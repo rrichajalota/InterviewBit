@@ -31,7 +31,7 @@ int Solution::sumNumbers(TreeNode* A) {
         
     long long int sum=0;
     
-    return (int)findsum(A,sum)%1003;
+    return (int)findsum(A,sum);
 }
 
 long long int findsum(TreeNode *A, long long int sum){
@@ -44,5 +44,5 @@ long long int findsum(TreeNode *A, long long int sum){
     if(A->left==NULL && A->right==NULL)     //it's a leaf, return the sum calculated so far.
         return sum;
     
-    return (findsum(A->left,sum)+findsum(A->right,sum));
+    return (findsum(A->left,sum)+findsum(A->right,sum))%1003;
 }
