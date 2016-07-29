@@ -22,26 +22,27 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
-long long int findsum(TreeNode *A, long long int num);
+
+long long int findsum(TreeNode *A, long long int sum);
 
 int Solution::sumNumbers(TreeNode* A) {
     if(!A)
         return 0;
         
-    long long int num=0;
+    long long int sum=0;
     
-    return (int)findsum(A,num)%1003;
+    return (int)findsum(A,sum)%1003;
 }
 
-long long int findsum(TreeNode *A, long long int num){
+long long int findsum(TreeNode *A, long long int sum){
     
     if(!A)
         return 0;
 
-    num = (num * 10 + A->val)%1003;
+    sum = (sum * 10 + A->val)%1003;
     
-    if(A->left==NULL && A->right==NULL)
-        return num;
+    if(A->left==NULL && A->right==NULL)     //it's a leaf, return the sum calculated so far.
+        return sum;
     
-    return (findsum(A->left,num)+findsum(A->right,num));
+    return (findsum(A->left,sum)+findsum(A->right,sum));
 }
